@@ -1,23 +1,23 @@
 version: 2.1
 
 orbs:
-python: circleci/python@0.2.1
+  python: circleci/python@0.2.1
 
 jobs:
-convert-hw1:
-executor: python/default
-steps:
-- checkout
-- python/install-deps
-- run:
-name: Jupyter get HTML
-command: |
-jupyter nbconvert —execute —to html hw1.ipynb
+  convert-hw1:
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-deps
+      - run:
+          name: Jupyter get HTML
+          command: |
+            jupyter nbconvert —execute —to html hw1.ipynb
 
-- store_artifacts:
-path: ./hw1.html
+      - store_artifacts:
+          path: ./hw1.html
 
 workflows:
-main:
-jobs:
-- convert-hw1
+  main:
+    jobs:
+      - convert-hw1
