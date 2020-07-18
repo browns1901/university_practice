@@ -1,23 +1,26 @@
-version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
+version: 2
 jobs:
-  convert-hw1:
-    executor: python/default
+  convert-base-decision-for-university-practice:
+    docker:
+    - image: circleci/python:latest
     steps:
-      - checkout
-      - python/install-deps
-      - run:
-          name: Jupyter get HTML
-          command: |
-            jupyter nbconvert —execute —to html hw1.ipynb
-
-      - store_artifacts:
-          path: ./hw1.html
-
+    - checkout
+    - run:
+        command: |
+          if true; then
+            pip install --user -r requirements.txt
+          else
+            pip install -r requirements.txt
+          fi
+        name: Install Dependencies
+    - run:
+        name: Jupyter get HTML
+        command: |
+          jupyter nbconvert —execute —to html base-decision-for-university-practice.ipynb
+    - store_artifacts:
+        path: ./base-decision-for-university-practice.html
 workflows:
   main:
     jobs:
-      - convert-hw1
+    - convert-base-decision-for-university-practice
+  version: 2
