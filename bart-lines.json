@@ -1,8 +1,7 @@
 [
   {
     "name": "Richmond - Millbrae",
-    "color": ["#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24", "#ed1c24",
-              "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb", "#ff00bb"],
+    "color": "#ff00bb",
     "path": [
       [
         -122.3535851,
